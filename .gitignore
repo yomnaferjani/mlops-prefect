@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+.pytest_cache/
+*.joblib
+mlops-prefect-clone/
+.ipynb_checkpoints/
