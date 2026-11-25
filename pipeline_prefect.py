@@ -15,12 +15,12 @@ from model_pipeline import (
     evaluate_model,
 )
 
-# Étape 4 : on ne cible QUE nos 3 fichiers
-FILES = ["model_pipeline.py", "main.py", "pipeline_prefect.py"]
-MODEL_PATH = "classifier.joblib"  # même valeur par défaut que save_model/load_model
 
-# Étape 6 : à remplir plus tard avec l'URL de ton repo GitHub
-REPO_URL = "https://github.com/TON_USER/mlops-prefect.git"
+FILES = ["model_pipeline.py", "main.py", "pipeline_prefect.py"]
+MODEL_PATH = "classifier.joblib"  
+
+
+REPO_URL = "https://github.com/yomnaferjani/mlops-prefect.git"
 REPO_DIR = "mlops-prefect-clone"
 
 
@@ -132,7 +132,7 @@ def evaluate_flow():
 
 @flow(name="all")
 def all_flow():
-    # clone_repo()  # <-- à décommenter à l'étape 6 (repo Git)
+    
     install_dependencies()
     code_flow()
     x_train, x_test, y_train, y_test = prepare_data_task()  # <-- ADAPTE
@@ -146,7 +146,7 @@ FLOWS = {
     "install": install_flow,
     "code": code_flow,
     "train": train_flow,
-    "entrainement": train_flow,  # alias utilisé dans l'énoncé
+    "entrainement": train_flow,  
     "evaluate": evaluate_flow,
     "all": all_flow,
 }
